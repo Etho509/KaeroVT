@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaeroVT | Links</title>
+  <meta name="description" content="All my links in one place." />
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius-xl: 22px;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 40px rgba(15,23,42,0.7);
+      --transition: 0.22s ease;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #111827 0, #020817 38%, #000 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+    }
+
+    .glow-orbit {
+      position: fixed;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% -10%, rgba(56,189,248,0.08), transparent 55%),
+        radial-gradient(circle at 100% -10%, rgba(129,140,248,0.06), transparent 50%),
+        radial-gradient(circle at 50% 110%, rgba(56,189,248,0.04), transparent 60%);
+      opacity: 1;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .card {
+      backdrop-filter: blur(20px);
+      background: radial-gradient(circle at top, rgba(56,189,248,0.14), transparent 70%)
+        border-box,
+        linear-gradient(to bottom, rgba(148,163,253,0.12), rgba(15,23,42,1)) border-box;
+      border-radius: 32px;
+      padding: 26px 22px 22px;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,253,0.25);
+      overflow: hidden;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      color: var(--accent);
+      background-color: rgba(15,23,42,0.96);
+      border: 1px solid rgba(56,189,248,0.2);
+      margin-bottom: 16px;
+    }
+
+    .badge span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      box-shadow: 0 0 9px var(--accent);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 30% 0, rgba(56,189,248,0.7), transparent),
+        #020817;
+      border: 2px solid rgba(56,189,248,0.6);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-size: 18px;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-info h1 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .profile-info p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .status {
+      margin-bottom: 16px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status span.pill {
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(56,189,248,0.35);
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      font-size: 10px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 14px;
+      margin-top: 4px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148,163,253,0.18);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.06), transparent)
+        ,rgba(7,11, twenty4, 0.98);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      transition: transform var(--transition), box-shadow var(--transition),
+        background var(--transition), border-color var(--transition);
+      box-shadow: 0 8px 18px rgba(15,23,42,0.65);
+    }
+
+    .link-main {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      background-color: rgba(15,23,42,1);
+      border: 1px solid rgba(56,189,248,0.5);
+    }
+
+    .link-label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .link-label strong {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .link-label span {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .link-arrow {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.9);
+      background: radial-gradient(circle at top, rgba(56,189,248,0.14), transparent)
+        ,rgba(6,9,20,1);
+    }
+
+    .link-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(15,23,42,0.7);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      color: var(--muted);
+      padding-top: 6px;
+      border-top: 1px solid rgba(15,23,42,1);
+    }
+
+    .social-mini {
+      display: flex;
+      gap: 5px;
+    }
+
+    .social-mini a {
+      width: 18px;
+      height: 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148,163,253,0.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      text-decoration: none;
+      color: var(--accent);
+      background-color: rgba(6,9,20,0.98);
+      transition: all var(--transition);
+    }
+
+    .social-mini a:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 6px 12px rgba(15,23,42,0.85);
+    }
+
+    @media (max-width: 420px) {
+      .card {
+        padding: 22px 16px 16px;
+        border-radius: 24px;
+      }
+      .profile-info h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-orbit"></div>
+  <div class="wrapper">
+    <main class="card">
+      <div class="badge">
+        <span class="dot"></span>
+        <!-- Change the status here dishit-->
+
+        guh
+      </div>
+
+      <section class="profile">
+        <div class="avatar">
+      
+          <img src="pfp.png" alt="Profile Picture" />
+        </div>
+        <div class="profile-info">
+          <h1>KaeroVT</h1>
+          <p>Physicist • Stupid Idiot • EN VTuber</p>
+        </div>
+      </section>
+
+      <div class="status">
+        <span class="pill">✨ New stream schedule</span>
+           Mon / Wed / Fri · 5:00 PM PT · that’s <span id="local-stream-time"></span> for you
+      </div>
+
+      <nav class="links">
+      
+        <a class="link-btn" href="https://twitch.tv/kaerovt" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">
+  <img src="twitch_favi.png" alt="Twitch" style="width:16px;height:16px;" />
+</div>
+            <div class="link-label">
+              <strong>Twitch</strong>
+              <span>Main streaming HQ</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <!-- <a class="link-btn" href="https://youtube.com/@yourname" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">▶</div>
+            <div class="link-label">
+              <strong>YouTube</strong>
+              <span>VODs • Clips • Karaoke</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a> -->
+
+        <!--<a class="link-btn" href="https://x.com/yourname" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">✦</div>
+            <div class="link-label">
+              <strong>Twitter / X</strong>
+              <span>Shitposts & schedule updates</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a> -->
+
+        <a class="link-btn" href="https://discord.gg/yourserver" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">
+           <img src="discord_favi.png" alt="Discord" style="width:16px;height:16px;" />
+                </div>
+            <div class="link-label">
+              <strong>Discord</strong>
+              <span>READ THE RULES!</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <a class="link-btn" href="https://www.youtube.com/watch?v=u35QD7UxcbE" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">
+                <img src="twitter_favi.png" alt="Twitter" style="width:16px;height:16px;" />
+                    </div>
+
+            <div class="link-label">
+              <strong>Twitter / X</strong>
+              <span>you know whats here... </span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <!--<a class="link-btn" href="https://throne.com/yourname" target="_blank" rel="noopener">
+          <div class="link-main">
+            <div class="link-icon">🎁</div>
+            <div class="link-label">
+              <strong>Throne / Wishlist</strong>
+              <span>Spoil the gremlin (optional)</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a> -->
+
+        <!--<a class="link-btn" href="mailto:your.email@example.com">
+          <div class="link-main">
+            <div class="link-icon">✉</div>
+            <div class="link-label">
+              <strong>Business Email</strong>
+              <span>Collabs & inquiries</span>
+            </div>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a>
+      </nav> -->
+
+      <div class="footer">
+        <span>© <span id="year"></span> KaeroVT</span>
+        <div class="social-mini">
+          <a href="https://twitch.tv/kaerovt" target="_blank" rel="noopener">T</a>
+          <!--<a href="https://youtube.com/@yourname" target="_blank" rel="noopener">Y</a>
+          <a href="https://x.com/yourname" target="_blank" rel="noopener">X</a> -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+<script>
+
+  const basePtTime = new Date("2025-11-17T17:00:00-08:00"); // 5 PM PST
+
+  const localTimeSpan = document.getElementById("local-stream-time");
+
+  const localFormatter = new Intl.DateTimeFormat(undefined, {
+    hour: "numeric",
+    minute: "2-digit"
+  });
+
+  localTimeSpan.textContent = localFormatter.format(basePtTime);
+</script>
+
+
+
+
+</body>
+</html>
