@@ -1,15 +1,14 @@
 :root {
-  --ink: #111025;
-  --deep: #070714;
-  --mist: rgba(245, 249, 255, 0.78);
-  --glass: rgba(237, 242, 255, 0.2);
-  --stroke: rgba(255, 255, 255, 0.5);
+  --ink: #f2f4ff;
+  --deep: #02030b;
+  --glass: rgba(16, 20, 48, 0.42);
+  --stroke: rgba(165, 220, 255, 0.4);
   --blue: #738dcb;
-  --violet: #3f3863;
-  --pink: #ff8ac8;
-  --mint: #8df7dc;
-  --lime: #d9ff70;
-  --shadow: 0 22px 70px rgba(17, 16, 37, 0.36);
+  --violet: #242354;
+  --pink: #d06cff;
+  --cyan: #7cf8ff;
+  --green: #baff98;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
   --ui: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -27,9 +26,10 @@ body {
   color: var(--ink);
   font-family: var(--ui);
   background:
-    linear-gradient(125deg, rgba(255, 138, 200, 0.28), transparent 34%),
-    linear-gradient(215deg, rgba(141, 247, 220, 0.28), transparent 32%),
-    radial-gradient(circle at 48% 18%, #f6f3ff 0 18%, #cad6ff 42%, #7e92d6 70%, #342d55 100%);
+    linear-gradient(90deg, rgba(55, 58, 130, 0.72), transparent 24%, transparent 76%, rgba(5, 210, 255, 0.42)),
+    linear-gradient(180deg, rgba(2, 3, 11, 0.2), rgba(2, 3, 11, 0.7)),
+    url("background.png") center / cover fixed no-repeat,
+    var(--deep);
   overflow-x: hidden;
 }
 
@@ -38,11 +38,11 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 78%);
+  background:
+    radial-gradient(circle at 50% 45%, transparent 0 32%, rgba(1, 2, 8, 0.34) 78%),
+    repeating-linear-gradient(90deg, rgba(95, 225, 255, 0.07) 0 1px, transparent 1px 4px);
+  mix-blend-mode: screen;
+  opacity: 0.72;
 }
 
 .scene {
@@ -75,7 +75,7 @@ body::before {
   height: min(42vw, 460px);
   left: -9vw;
   top: 10vh;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(115, 141, 203, 0.42), rgba(255, 138, 200, 0.28));
+  background: linear-gradient(145deg, rgba(124, 248, 255, 0.5), rgba(49, 63, 152, 0.5), rgba(208, 108, 255, 0.3));
   border-radius: 54% 46% 59% 41% / 45% 57% 43% 55%;
 }
 
@@ -88,7 +88,7 @@ body::before {
   height: min(33vw, 360px);
   right: -7vw;
   top: 18vh;
-  background: linear-gradient(135deg, rgba(141, 247, 220, 0.7), rgba(255, 255, 255, 0.42), rgba(115, 141, 203, 0.5));
+  background: linear-gradient(135deg, rgba(186, 255, 152, 0.45), rgba(124, 248, 255, 0.38), rgba(44, 37, 112, 0.58));
   border-radius: 63% 37% 43% 57% / 54% 40% 60% 46%;
 }
 
@@ -101,7 +101,7 @@ body::before {
   height: min(22vw, 250px);
   left: 20vw;
   bottom: -9vh;
-  background: linear-gradient(90deg, rgba(217, 255, 112, 0.5), rgba(255, 138, 200, 0.42), rgba(115, 141, 203, 0.52));
+  background: linear-gradient(90deg, rgba(124, 248, 255, 0.34), rgba(208, 108, 255, 0.34), rgba(58, 72, 162, 0.46));
   border-radius: 52% 48% 50% 50% / 62% 42% 58% 38%;
 }
 
@@ -118,8 +118,8 @@ body::before {
   transform: translateX(-50%) perspective(600px) rotateX(64deg);
   transform-origin: center top;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.34) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.34) 1px, transparent 1px);
+    linear-gradient(rgba(124, 248, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(208, 108, 255, 0.18) 1px, transparent 1px);
   background-size: 56px 56px;
   opacity: 0.36;
 }
@@ -140,7 +140,7 @@ body::before {
   border: 1px solid var(--stroke);
   border-radius: 8px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.2) 48%, rgba(115, 141, 203, 0.18)),
+    linear-gradient(145deg, rgba(180, 210, 255, 0.22), rgba(14, 18, 48, 0.5) 48%, rgba(5, 210, 255, 0.12)),
     var(--glass);
   box-shadow: var(--shadow);
   backdrop-filter: blur(22px) saturate(1.45);
@@ -155,7 +155,7 @@ body::before {
 
 .hero::before {
   inset: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  border: 1px solid rgba(124, 248, 255, 0.22);
   border-radius: 6px;
 }
 
@@ -164,7 +164,7 @@ body::before {
   left: 18px;
   right: 18px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, white, transparent);
+  background: linear-gradient(90deg, transparent, rgba(124, 248, 255, 0.9), transparent);
 }
 
 .logo-wrap {
@@ -187,15 +187,15 @@ body::before {
   width: fit-content;
   margin: 0 auto 12px;
   padding: 7px 12px;
-  color: #30305a;
+  color: #e9f8ff;
   font-size: 0.76rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(165, 220, 255, 0.44);
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.22));
-  box-shadow: inset 0 1px 0 white, 0 10px 24px rgba(63, 56, 99, 0.16);
+  background: linear-gradient(180deg, rgba(124, 248, 255, 0.22), rgba(18, 22, 58, 0.46));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 .tagline,
@@ -206,26 +206,26 @@ body::before {
 
 .tagline {
   max-width: 34rem;
-  color: #292947;
+  color: #f2f4ff;
   font-weight: 800;
   font-size: clamp(0.92rem, 2.8vw, 1.05rem);
 }
 
 .tagline span {
-  color: var(--blue);
+  color: var(--cyan);
 }
 
 .schedule {
   width: fit-content;
   max-width: 100%;
   padding: 9px 12px;
-  color: #262643;
+  color: #e9f8ff;
   font-size: 0.9rem;
   line-height: 1.4;
-  border: 1px solid rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(165, 220, 255, 0.34);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  background: rgba(13, 17, 48, 0.46);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .links {
@@ -241,26 +241,26 @@ body::before {
   align-items: center;
   gap: 12px;
   padding: 14px;
-  color: var(--ink);
+  color: #f5f8ff;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(165, 220, 255, 0.34);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.22)),
+    linear-gradient(180deg, rgba(190, 220, 255, 0.24), rgba(9, 13, 38, 0.58)),
     linear-gradient(90deg, var(--tint), transparent 56%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 12px 30px rgba(48, 42, 89, 0.16);
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 12px 34px rgba(0, 0, 0, 0.34);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .link:hover,
 .link:focus-visible {
   transform: translateY(-3px);
-  border-color: white;
+  border-color: rgba(124, 248, 255, 0.82);
   box-shadow:
-    inset 0 1px 0 white,
-    0 18px 38px rgba(48, 42, 89, 0.26);
+    inset 0 1px 0 rgba(255, 255, 255, 0.74),
+    0 18px 42px rgba(0, 0, 0, 0.48);
   outline: none;
 }
 
@@ -269,19 +269,19 @@ body::before {
 }
 
 .twitch {
-  --tint: rgba(151, 99, 255, 0.32);
+  --tint: rgba(116, 89, 255, 0.34);
 }
 
 .discord {
-  --tint: rgba(115, 141, 203, 0.34);
+  --tint: rgba(69, 103, 255, 0.34);
 }
 
 .tiktok {
-  --tint: rgba(141, 247, 220, 0.34);
+  --tint: rgba(124, 248, 255, 0.32);
 }
 
 .twitter {
-  --tint: rgba(255, 138, 200, 0.3);
+  --tint: rgba(208, 108, 255, 0.3);
 }
 
 .link-icon {
@@ -313,13 +313,13 @@ body::before {
 }
 
 .link-copy small {
-  color: #4b4a6c;
+  color: #b6c9f6;
   font-size: 0.82rem;
   line-height: 1.35;
 }
 
 .arrow {
-  color: var(--violet);
+  color: var(--cyan);
   font-size: 1.15rem;
   font-weight: 900;
 }
@@ -330,7 +330,7 @@ footer {
   align-items: center;
   gap: 16px;
   margin-top: 22px;
-  color: rgba(17, 16, 37, 0.64);
+  color: rgba(235, 243, 255, 0.72);
   font-size: 0.78rem;
   font-weight: 800;
 }
