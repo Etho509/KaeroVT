@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="login-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AUTHORIZED PERSONNEL</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="login-shell">
+    <p class="kicker">INTERNAL ARCHIVE / LEVEL 05</p>
+    <h1>Identify<br>yourself.</h1>
+    <form id="loginForm">
+      <label for="identity">ARCHIVE KEY</label>
+      <input id="identity" name="identity" autocomplete="off" autofocus required>
+      <button type="submit">ENTER</button>
+      <p id="error" role="alert" aria-live="assertive"></p>
+    </form>
+    <a href="index.html" class="return">← return to the record</a>
+  </main>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      sessionStorage.setItem('attempt', document.getElementById('identity').value);
+      document.getElementById('error').textContent = 'INCORRECT. THIS KEY HAS NEVER EXISTED.';
+      setTimeout(function () { location.href = 'not-for-you.html'; }, 900);
+    });
+  </script>
+</body>
+</html>

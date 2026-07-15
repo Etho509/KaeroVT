@@ -1,0 +1,105 @@
+.schedule {
+  padding: 12vh 8%;
+  border-top: 1px solid var(--ink);
+  background: #d8d3c8;
+}
+
+.schedule h2 {
+  margin: 35px 0;
+  font-size: clamp(44px, 9vw, 120px);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.schedule h2 span {
+  color: var(--blue);
+  font-weight: 400;
+}
+
+.schedule > p:last-child {
+  max-width: 650px;
+  margin-left: 22%;
+  font-size: clamp(17px, 2vw, 24px);
+}
+
+.schedule a { color: var(--blue); }
+
+.fixation {
+  color: var(--red);
+  font-style: italic;
+  transform: rotate(-1deg);
+}
+
+.whisper {
+  inset: 50% auto auto 50%;
+  z-index: 50;
+  width: min(86vw, 760px);
+  max-width: none;
+  padding: clamp(28px, 6vw, 70px);
+  transform: translate(-50%, -50%) rotate(-1deg);
+  border: 2px solid #aaa397;
+  box-shadow: 0 30px 100px #000a;
+  font-size: clamp(20px, 4vw, 42px);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.byline {
+  color: var(--red);
+  font-size: .85em;
+  font-style: italic;
+}
+
+.footnote-trigger {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.erased-note {
+  color: transparent;
+  text-shadow: 0 0 6px #171613;
+  cursor: help;
+}
+
+.erased-note:hover,
+.erased-note:focus { color: var(--red); text-shadow: none; }
+
+.forbidden-name {
+  border: 0;
+  padding: 0 .2em;
+  background: var(--ink);
+  color: var(--ink);
+  font: inherit;
+  cursor: not-allowed;
+  transition: color .15s;
+}
+
+.forbidden-name.revealed { color: var(--paper); }
+
+.footer-marks { display: flex; gap: 12px; }
+.footer-marks button { color: inherit; }
+
+body.pajama-evidence::after {
+  content: "HELLO KITTY PAJAMA-PANTS EVIDENCE RECOVERED / FEET REDACTED";
+  position: fixed;
+  z-index: 20;
+  inset: 50% auto auto 50%;
+  width: min(80vw, 560px);
+  padding: 35px;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  border: 2px solid var(--red);
+  background: var(--paper);
+  color: var(--red);
+  box-shadow: 0 20px 80px #0008;
+  font: 700 18px/1.5 "Courier New", monospace;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .schedule > p:last-child { margin-left: 0; }
+}
