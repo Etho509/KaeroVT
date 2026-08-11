@@ -1,0 +1,235 @@
+/*
+  Place your licensed font at assets/fot-yuruka-std.ttf.
+  The .tff source is also listed below in case that is the file's real extension.
+*/
+@font-face {
+  font-family: "Yuruka Web";
+  src:
+    url("fot-yuruka-std.ttf") format("truetype"),
+    url("fot-yuruka-std.tff") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --cream: #ecd6bb;
+  --mint: #93cabc;
+  --paper: #fffaf2;
+  --ink: #344541;
+  --white: #fffefd;
+  --shadow: #5f8e82;
+}
+
+* { box-sizing: border-box; }
+
+html { min-height: 100%; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 10% 15%, rgb(147 202 188 / 36%) 0 4px, transparent 5px),
+    radial-gradient(circle at 88% 22%, rgb(236 214 187 / 65%) 0 6px, transparent 7px),
+    radial-gradient(circle at 18% 82%, rgb(236 214 187 / 55%) 0 4px, transparent 5px),
+    radial-gradient(circle at 84% 88%, rgb(147 202 188 / 30%) 0 5px, transparent 6px);
+  background-size: 160px 160px, 210px 210px, 190px 190px, 230px 230px;
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+}
+
+.page-shell {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 48px 20px;
+}
+
+.link-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  padding: 48px 42px 30px;
+  border: 3px solid var(--ink);
+  border-radius: 36px;
+  background: rgb(255 254 253 / 94%);
+  box-shadow: 10px 12px 0 var(--cream), 14px 16px 0 var(--ink);
+  text-align: center;
+}
+
+.avatar {
+  display: grid;
+  width: 88px;
+  height: 88px;
+  margin: -4px auto 24px;
+  place-items: center;
+  border: 3px solid var(--ink);
+  border-radius: 50% 45% 48% 44%;
+  background: var(--mint);
+  box-shadow: 5px 5px 0 var(--cream);
+  transform: rotate(-4deg);
+}
+
+.avatar span {
+  font: 700 46px/1 "Yuruka Web", "FOT-Yuruka Std", "Arial Rounded MT Bold", sans-serif;
+  transform: rotate(4deg);
+}
+
+.name-frame {
+  display: inline-block;
+  padding: 7px;
+  border: 4px solid var(--cream);
+  border-radius: 22px 28px 20px 26px;
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 8px var(--mint);
+  transform: rotate(-1deg);
+}
+
+h1 {
+  margin: 0;
+  padding: 4px 26px 8px;
+  border: 2px dashed var(--mint);
+  border-radius: 14px 19px 13px 18px;
+  font-family: "Yuruka Web", "FOT-Yuruka Std", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: clamp(3rem, 13vw, 5.3rem);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+
+.bio {
+  margin: 30px 0 26px;
+  font-size: .94rem;
+  font-weight: 700;
+  letter-spacing: .015em;
+}
+
+.bio span { color: var(--mint); }
+
+.schedule {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 22px;
+  padding: 15px 18px;
+  border: 2px dashed var(--shadow);
+  border-radius: 18px;
+  background: rgb(147 202 188 / 24%);
+  text-align: left;
+}
+
+.schedule-icon {
+  flex: 0 0 auto;
+  color: var(--shadow);
+  font-size: 28px;
+}
+
+.schedule p {
+  margin: 0;
+  font-size: .86rem;
+  line-height: 1.4;
+}
+
+.links { display: grid; gap: 14px; }
+
+.link {
+  display: grid;
+  grid-template-columns: 48px 1fr 32px;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 11px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 20px 24px 19px 22px;
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 4px 5px 0 var(--ink);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.link:nth-child(odd) { background: var(--cream); }
+.link:nth-child(even) { background: var(--mint); }
+.link:nth-child(2) { transform: rotate(.35deg); }
+.link:nth-child(3) { transform: rotate(-.35deg); }
+
+.link:hover,
+.link:focus-visible {
+  outline: none;
+  transform: translate(-2px, -3px) rotate(0);
+  box-shadow: 7px 8px 0 var(--ink);
+}
+
+.link:active {
+  transform: translate(3px, 4px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.link-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  font-size: 21px;
+}
+
+.link strong,
+.link small { display: block; }
+
+.link strong {
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+
+.link small {
+  margin-top: 2px;
+  font-size: .76rem;
+  opacity: .77;
+}
+
+.arrow {
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+}
+
+footer p {
+  margin: 28px 0 0;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+footer span { color: var(--shadow); font-size: 1.2em; }
+
+.doodle {
+  position: absolute;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  line-height: 1;
+  user-select: none;
+}
+
+.doodle-star { top: 8%; left: 10%; color: var(--mint); font-size: clamp(45px, 8vw, 90px); transform: rotate(-14deg); }
+.doodle-heart { top: 14%; right: 10%; color: var(--cream); font-size: clamp(55px, 10vw, 110px); transform: rotate(11deg); }
+.doodle-flower { bottom: 7%; left: 8%; color: var(--cream); font-size: clamp(50px, 9vw, 100px); transform: rotate(-9deg); }
+.doodle-sparkle { right: 9%; bottom: 9%; color: var(--mint); font-size: clamp(65px, 12vw, 130px); transform: rotate(8deg); }
+
+@media (max-width: 600px) {
+  .page-shell { padding: 24px 14px 34px; }
+  .link-card { padding: 36px 20px 25px; border-radius: 28px; box-shadow: 7px 8px 0 var(--cream), 10px 11px 0 var(--ink); }
+  .avatar { width: 72px; height: 72px; margin-bottom: 20px; }
+  .avatar span { font-size: 38px; }
+  h1 { padding-inline: 18px; }
+  .bio { font-size: .83rem; }
+  .link { grid-template-columns: 44px 1fr 26px; padding-inline: 12px; }
+  .link-icon { width: 40px; height: 40px; }
+  .doodle { opacity: .45; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link { transition: none; }
+}
