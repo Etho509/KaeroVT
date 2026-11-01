@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Yuruka Web";
+  src: url("fot-yuruka-std.ttf") format("truetype"), url("fot-yuruka-std.tff") format("truetype");
+  font-display: swap;
+}
+:root { --cream: #ecd6bb; --mint: #93cabc; --ink: #304b43; --paper: #fffaf2; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--cream); color: var(--ink); font-family: "Trebuchet MS", sans-serif; }
+a { color: inherit; }
+.page-shell { padding: 64px 22px 30px; }
+.link-card { width: min(100%, 460px); margin: auto; }
+header { text-align: center; margin-bottom: 16px; }
+h1 { margin: 0; font-family: "Yuruka Web", "FOT-Yuruka Std", "Arial Rounded MT Bold", sans-serif; font-size: clamp(48px, 13vw, 68px); line-height: 1.3; letter-spacing: -.045em; color: var(--mint); -webkit-text-stroke: 1px var(--ink); paint-order: stroke fill; text-shadow: 2px 2px 0 var(--ink); }
+.bio { margin: 14px 0 0; font-size: 13px; line-height: 1.6; }
+.bio span { margin: 0 4px; }
+.schedule { text-align: center; margin: 0 0 30px; }
+.schedule p { margin: 0; font-size: 12px; line-height: 1.6; }
+.links { display: grid; gap: 12px; }
+.link { display: grid; grid-template-columns: 30px 1fr 30px; align-items: center; gap: 12px; min-height: 76px; padding: 15px 22px; border: 1px solid #304b4326; border-radius: 16px; background: var(--paper); text-align: center; text-decoration: none; box-shadow: 0 3px 0 #304b430c; transition: transform .2s, background .2s, box-shadow .2s; }
+.link-icon { display: block; width: 24px; height: 24px; object-fit: contain; justify-self: center; flex-shrink: 0; }
+.link strong { display: block; font-size: 16px; }
+.link small { display: block; margin-top: 4px; font-size: 11px; opacity: .75; }
+.arrow { font-size: 20px; opacity: .65; }
+.link:hover { transform: translateY(-3px); background: #f6fffb; box-shadow: 0 7px 14px #304b4310; }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.discord-panel { margin-top: 16px; padding: 20px; background: var(--mint); border: 1px solid #304b4326; border-radius: 18px; }
+.discord-heading { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 18px; }
+.discord-heading h2 { margin: 0; font-size: 17px; }
+.discord-heading p { margin: 4px 0 0; font-size: 11px; }
+.widget-frame { width: 100%; max-width: 350px; margin: auto; overflow: hidden; border-radius: 10px; background: #1e1f22; }
+.widget-frame iframe { display: block; width: 100%; height: 500px; border: 0; }
+.discord-join { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 14px; margin-top: 16px; background: var(--ink); color: var(--paper); border-radius: 12px; text-decoration: none; font-size: 13px; font-weight: bold; transition: opacity .2s; }
+.discord-join:hover { opacity: .85; }
+footer { text-align: center; margin-top: 28px; font-size: 11px; opacity: .7; }
+footer span { margin-left: 4px; }
+.animated-page header, .animated-page .schedule, .animated-page .link, .animated-page .discord-panel { animation: appear .5s ease-out backwards; }
+.animated-page .schedule { animation-delay: .08s; }
+.animated-page .link:nth-child(1) { animation-delay: .15s; }
+.animated-page .link:nth-child(2) { animation-delay: .22s; }
+.animated-page .link:nth-child(3) { animation-delay: .29s; }
+.animated-page .link:nth-child(4) { animation-delay: .36s; }
+.animated-page .discord-panel { animation-delay: .43s; }
+@keyframes appear { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+@media (max-width: 480px) { .page-shell { padding: 40px 18px 24px; } .link { padding-inline: 16px; } .discord-panel { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
